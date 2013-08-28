@@ -1,0 +1,119 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+!
+! This file was auto-generated with f2py (version:2).
+! See http://cens.ioc.ee/projects/f2py2e/
+!
+! modified by Tom Richter, 2013
+!
+
+python module toeplitz ! in
+    usercode '''
+        int max3(int a, int b, int c){return max(max(a,b),c);}
+    '''
+    interface  ! in :_toeplitz
+        subroutine cbto_sl(m,l,a1,a2,b,x) ! in :_toeplitz:toeplitz.f90
+            integer(kind=4), intent(hide),depend(b) :: m=shape(b,0)
+            integer(kind=4), intent(hide),depend(b) :: l=shape(b,1)
+            complex(kind=4) dimension(m*m,l),depend(m,l) :: a1
+            complex(kind=4) dimension(m*m,l-1),depend(m,l) :: a2
+            complex(kind=4) dimension(m,l) :: b
+            complex(kind=4) dimension(m,l),depend(m,l),intent(out) :: x
+        end subroutine cbto_sl
+        subroutine cccc_sl(a,x,r,m,l,k,lda) ! in :_toeplitz:toeplitz.f90
+            complex(kind=4) dimension(m*l,k),depend(k,l) :: a
+            complex(kind=4) dimension(m,l,k),intent(in,out) :: x
+            complex(kind=4) intent(hide),dimension(max3(m,2*l,2*k)),depend(m,l,k) :: r
+            integer(kind=4), intent(hide),depend(x) :: m=shape(x,0)
+            integer(kind=4), intent(hide),depend(x) :: l=shape(x,1)
+            integer(kind=4), intent(hide),depend(x) :: k=shape(x,2)
+            integer(kind=4), intent(hide),depend(a,) :: lda=shape(a,0)
+        end subroutine cccc_sl
+        subroutine cccg_sl(a,x,r,m,l,k,lda) ! in :_toeplitz:toeplitz.f90
+            complex(kind=4) dimension(m*m,k),depend(m,k) :: a
+            complex(kind=4) dimension(m,l,k),intent(in,out) :: x
+            complex(kind=4) intent(hide),dimension(max3(m,2*l,2*k)),depend(m,l,k) :: r
+            integer(kind=4), intent(hide),depend(x) :: m=shape(x,0)
+            integer(kind=4), intent(hide),depend(x) :: l=shape(x,1)
+            integer(kind=4), intent(hide),depend(x) :: k=shape(x,2)
+            integer(kind=4), intent(hide),depend(a) :: lda=shape(a,0)
+        end subroutine cccg_sl
+        subroutine ccc_sl(a,x,r,m,l,lda) ! in :_toeplitz:toeplitz.f90
+            complex(kind=4) dimension(m,l),depend(m,l) :: a
+            complex(kind=4) dimension(m,l),intent(in,out) :: x
+            complex(kind=4) intent(hide),dimension(max(m,2*l)),depend(m,l) :: r
+            integer(kind=4), intent(hide),depend(x) :: m=shape(x,0)
+            integer(kind=4), intent(hide),depend(x) :: l=shape(x,1)
+            integer(kind=4), intent(hide),depend(a) :: lda=shape(a,0)
+        end subroutine ccc_sl
+        subroutine ccct_sl(a,x,r,m,l,k,lda) ! in :_toeplitz:toeplitz.f90
+            complex(kind=4) dimension((2*m-1)*l,k),depend(m,l,k) :: a
+            complex(kind=4) dimension(m,l,k),intent(in,out) :: x
+            complex(kind=4) intent(hide),dimension(max3(2*m-2,2*l,2*k)),depend(m,l,k) :: r
+            integer(kind=4), intent(hide),depend(x) :: m=shape(x,0)
+            integer(kind=4), intent(hide),depend(x) :: l=shape(x,1)
+            integer(kind=4), intent(hide),depend(x) :: k=shape(x,2)
+            integer(kind=4), intent(hide),depend(a) :: lda=shape(a,0)
+        end subroutine ccct_sl
+        subroutine ccg_sl(a,x,r,m,l,lda) ! in :_toeplitz:toeplitz.f90
+            complex(kind=4) dimension(m*m,l),depend(m,l) :: a
+            complex(kind=4) dimension(m,l),intent(in,out) :: x
+            complex(kind=4) intent(hide),dimension(max(m,2*l)),depend(m,l) :: r
+            integer(kind=4), intent(hide),depend(x) :: m=shape(x,0)
+            integer(kind=4), intent(hide),depend(x) :: l=shape(x,1)
+            integer(kind=4), intent(hide),depend(a) :: lda=shape(a,0)
+        end subroutine ccg_sl
+        subroutine cci_sl(m,a,x) ! in :_toeplitz:toeplitz.f90
+            integer(kind=4), intent(hide),depend(a) :: m=len(a)
+            complex(kind=4) dimension(m) :: a
+            complex(kind=4) dimension(m),depend(m),intent(in,out) :: x
+        end subroutine cci_sl
+        subroutine cctg_sl(a,x,r,m,l,k,lda) ! in :_toeplitz:toeplitz.f90
+            complex(kind=4) dimension(m*m*(2*l-1),k),depend(m,l,k) :: a
+            complex(kind=4) dimension(m,l,k),intent(in,out) :: x
+            complex(kind=4) intent(hide),dimension(max(m*m*(2*l+3)+m,2*k)),depend(m,l,k) :: r
+            integer(kind=4), intent(hide),depend(x) :: m=shape(x,0)
+            integer(kind=4), intent(hide),depend(x) :: l=shape(x,1)
+            integer(kind=4), intent(hide),depend(x) :: k=shape(x,2)
+            integer(kind=4), intent(hide),depend(a) :: lda=shape(a,0)
+        end subroutine cctg_sl
+        subroutine cct_sl(a,x,r,m,l,lda) ! in :_toeplitz:toeplitz.f90
+            complex(kind=4) dimension(2*m-1,l),depend(m,l) :: a
+            complex(kind=4) dimension(m,l),intent(in,out) :: x
+            complex(kind=4) intent(hide),dimension(max(2*m-2,2*l)),depend(m,l) :: r
+            integer(kind=4), intent(hide),depend(x) :: m=shape(x,0)
+            integer(kind=4), intent(hide),depend(x) :: l=shape(x,1)
+            integer(kind=4), intent(hide),depend(a) :: lda=shape(a,0)
+        end subroutine cct_sl
+        subroutine ctg_sl(a,x,r,m,l,lda) ! in :_toeplitz:toeplitz.f90
+            complex(kind=4) dimension(m*l,2 * l - 1),depend(m,l) :: a
+            complex(kind=4) dimension(m,l),intent(in,out) :: x
+            complex(kind=4) intent(hide),dimension(m*m*(2*l+3)+m),depend(m,l) :: r
+            integer(kind=4), intent(hide),depend(x) :: m=shape(x,0)
+            integer(kind=4), intent(hide),depend(x) :: l=shape(x,1)
+            integer(kind=4), intent(hide),depend(a) :: lda=shape(a,0)
+        end subroutine ctg_sl
+        subroutine cto_sl(n,a,b,x,job) ! in :_toeplitz:toeplitz.f90
+            integer(kind=4), intent(hide),depend(a) :: n=(len(a)+1)/(2)
+            complex(kind=4) dimension(2 * n - 1) :: a
+            complex(kind=4) dimension(n),depend(n) :: b
+            complex(kind=4) dimension(n),depend(n),intent(out) :: x
+            integer(kind=4) optional :: job=0
+        end subroutine cto_sl
+        subroutine sbto_sl(m,l,a1,a2,b,x) ! in :_toeplitz:toeplitz.f90
+            integer(kind=4), intent(hide),depend(b) :: m=shape(b,0)
+            integer(kind=4), intent(hide),depend(b) :: l=shape(b,1)
+            real(kind=4) dimension(m*m,l),depend(m,l) :: a1
+            real(kind=4) dimension(m*m,l - 1),depend(m,l) :: a2
+            real(kind=4) dimension(m,l) :: b
+            real(kind=4) dimension(m,l),depend(m,l),intent(out) :: x
+        end subroutine sbto_sl
+        subroutine sto_sl(n,a,b,x,job) ! in :_toeplitz:toeplitz.f90
+            integer(kind=4), intent(hide),depend(a) :: n=(len(a)+1)/(2)
+            real(kind=4) dimension(2 * n - 1) :: a
+            real(kind=4) dimension(n),depend(n) :: b
+            real(kind=4) dimension(n),depend(n),intent(out) :: x
+            integer(kind=4) optional :: job=0
+        end subroutine sto_sl
+    end interface 
+end python module toeplitz
