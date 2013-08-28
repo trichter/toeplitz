@@ -1,4 +1,5 @@
-# toeplitz - Python wrapper for Fortran90 toeplitz package to solve a variety of Toeplitz and circulant linear systems
+# toeplitz
+### Python wrapper for Fortran90 toeplitz package to solve a variety of Toeplitz and circulant linear systems
 
 The wrapped Fortran90 toeplitz package was written by John Burkardt and is distributed under GNU LGPL license. It can be obtained from [John Burkhardt's website][1]. There you also find a short documentation and the following description:
 > TOEPLITZ is a FORTRAN90 library which solves a variety of Toeplitz and circulant linear systems.
@@ -10,9 +11,10 @@ This wrapper is based on numpy/f2py and provides a python interface for all fort
 For more documentation than on John Burkardt's website check the source file toeplitz.f90.
 
 ### Installation
+
 '''
   python setup.py install
   toeplitz-runtests
 '''
 
-[1] http://people.sc.fsu.edu/~jburkardt/f_src/toeplitz/toeplitz.html
+[1]: http://people.sc.fsu.edu/~jburkardt/f_src/toeplitz/toeplitz.html
