@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # (C) 2013 Tom Richter
-# license: MIT license
+# MIT license
 
 from numpy.random import random, seed
 import numpy as np
