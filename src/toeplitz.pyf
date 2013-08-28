@@ -5,7 +5,8 @@
 ! See http://cens.ioc.ee/projects/f2py2e/
 !
 ! modified by Tom Richter, 2013
-!
+! license: MIT license
+ 
 
 python module toeplitz ! in
     usercode '''
