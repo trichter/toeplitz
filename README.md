@@ -1,5 +1,6 @@
 # toeplitz
-### Python wrapper for Fortran90 toeplitz package to solve a variety of Toeplitz and circulant linear systems
+### Python wrapper for Fortran90 toeplitz package to solve a variety of
+### Toeplitz and circulant linear systems
 
 The wrapped Fortran90 toeplitz package was written by John Burkardt and is distributed under GNU LGPL license.
 It can be obtained from [John Burkhardt's website][1].
@@ -17,7 +18,19 @@ For more documentation than on John Burkardt's website check the source file toe
 
 ### Installation
 
+After installing the required [NumPy][2] package you can install via [pip][3]
+by running
+
+    pip install git+git://github.com/trichter/toeplitz.git
+
+Alternatively download the source code and run
+   
     python setup.py install
+
+The tests can be run with the script (SciPy installation necessary)  
+   
     toeplitz-runtests
 
 [1]: http://people.sc.fsu.edu/~jburkardt/f_src/toeplitz/toeplitz.html
+[2]: http://www.numpy.org/
+[3]: http://www.pip-installer.org/
