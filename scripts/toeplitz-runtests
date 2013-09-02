@@ -26,22 +26,22 @@ class UtilTestCase(unittest.TestCase):
         a1 = random(50) - 0.5
         a2 = random(50) - 0.5
         b = random(50) - 0.5
-        toep2 = np.hstack((a1[0], a2[1:], a1[1:])) # row, column
+        toep2 = np.hstack((a1[0], a2[1:], a1[1:]))  # row, column
         x2 = sto_sl(toep2, b)
         if SCIPY:
-            toep = scipy.linalg.toeplitz(a1, a2) # column, row
+            toep = scipy.linalg.toeplitz(a1, a2)  # column, row
             x = np.dot(scipy.linalg.inv(toep), b)
             np.testing.assert_array_almost_equal(x, x2, decimal=4)
 
     def test_cto_sl(self):
-        a1 = random(50) - 0.5 + 0.1j*(random(50)-0.5)
-        a2 = random(50) - 0.5 + 0.1j*(random(50)-0.5)
-        b = random(50) - 0.5 + 0.05j*(random(50)-0.5)
+        a1 = random(50) - 0.5 + 0.1j * (random(50) - 0.5)
+        a2 = random(50) - 0.5 + 0.1j * (random(50) - 0.5)
+        b = random(50) - 0.5 + 0.05j * (random(50) - 0.5)
         toep2 = np.hstack((a1[0], a2[1:], a1[1:]))  # row, column
         x2 = cto_sl(toep2, b)
         if SCIPY:
-            x = np.dot(scipy.linalg.inv(toep), b)
             toep = scipy.linalg.toeplitz(a1, a2)  # column, row
+            x = np.dot(scipy.linalg.inv(toep), b)
             np.testing.assert_array_almost_equal(x, x2, decimal=4)
 
 def suite():
