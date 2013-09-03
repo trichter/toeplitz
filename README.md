@@ -11,7 +11,7 @@ The original, true, correct version of TOEPLITZ is available in the TOEPLITZ sub
 
 This wrapper is based on numpy/f2py and provides a python interface for all fortran subroutines *_sl.
 Only the functions sto_sl and cto_sl (solve linear Toeplitz systems) are tested.
-They provide acceptable accuracy compared to scipy.linalg, but should run faster.
+They provide acceptable accuracy compared to scipy.linalg and run faster for large inputs.
 All other routines are not tested, but should work.
 For more documentation than on John Burkardt's website check the source file toeplitz.f90.
 
@@ -20,7 +20,7 @@ For more documentation than on John Burkardt's website check the source file toe
 After installing the required [NumPy][2] package you can install via [pip][3]
 by running
 
-    pip install git+git://github.com/trichter/toeplitz.git
+    pip install toeplitz
 
 Alternatively download the source code and run
    
