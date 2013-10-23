@@ -1,0 +1,18 @@
+language: python
+python:
+  - "2.7"
+  - "3.2"
+  - "3.3"
+virtualenv:
+  system_site_packages: true
+before_install:
+  - lsb_release -a # get info on the operating system
+  - sudo apt-get update -qq  
+  - sudo apt-get install -qq gfortran python-numpy python-scipy
+install:
+  - pip install . --use-mirrors
+script:
+  - toeplitz-runtests
+after_success:
+notifications:
+    email: false
