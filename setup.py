@@ -40,6 +40,5 @@ setup(name='toeplitz',
       ext_modules=[ext],
       entry_points={'console_scripts':
                     ['toeplitz-runtests = tests.test_toeplitz']},
-      #scripts=['toeplitz-runtests = tests.test_toeplitz.'],
       requires=['numpy']
       )
