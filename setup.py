@@ -38,6 +38,8 @@ setup(name='toeplitz',
       license='MIT',
       url='https://github.com/trichter/toeplitz',
       ext_modules=[ext],
-      scripts=['scripts/toeplitz-runtests'],
+      entry_points={'console_scripts':
+                    ['toeplitz-runtests = tests.test_toeplitz']},
+      #scripts=['toeplitz-runtests = tests.test_toeplitz.'],
       requires=['numpy']
       )
