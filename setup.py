@@ -24,7 +24,7 @@ For more documentation than on John Burkardt's website check the source file toe
 """
 
 
-from numpy.distutils.core import Extension, setup
+from numpy.distutils.core import Extension, setup, find_packages
 
 ext = Extension(name='toeplitz',
                 sources=['src/toeplitz.pyf', 'src/toeplitz.f90'])
@@ -38,7 +38,6 @@ setup(name='toeplitz',
       license='MIT',
       url='https://github.com/trichter/toeplitz',
       ext_modules=[ext],
-      entry_points={'console_scripts':
-                    ['toeplitz-runtests = tests.test_toeplitz']},
+      scripts=['scripts/toeplitz-runtests'],
       requires=['numpy']
       )
