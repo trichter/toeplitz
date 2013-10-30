@@ -24,7 +24,7 @@ For more documentation than on John Burkardt's website check the source file toe
 """
 
 
-from numpy.distutils.core import Extension, setup, find_packages
+from numpy.distutils.core import Extension, setup
 
 ext = Extension(name='toeplitz',
                 sources=['src/toeplitz.pyf', 'src/toeplitz.f90'])
