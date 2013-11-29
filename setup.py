@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from numpy.distutils.core import Extension, setup
 
-VERSION='0.1.1-dev'
+VERSION='0.1.1'
 
 with open('README.rst') as f:
     README = f.read()
@@ -14,7 +14,7 @@ ext = Extension(name='toeplitz',
 setup(name='toeplitz',
       version=VERSION,
       description='Wrapper for fortran 90 toeplitz package',
-      long_description=__doc__,
+      long_description=README,
       author='Tom Richter',
       author_email='richter@gfz-potsdam.de',
       license='MIT',
