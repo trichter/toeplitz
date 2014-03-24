@@ -3,11 +3,13 @@ toeplitz
 Python wrapper for Fortran90 toeplitz package to solve a variety of Toeplitz and circulant linear systems
 ---------------------------------------------------------------------------------------------------------
 
-:Author: Tom Richter
-:License: MIT
-:Project page: https://github.com/trichter/toeplitz
-:Pypi page: https://pypi.python.org/pypi/toeplitz
-:Test status: |buildstatus|
+Welcome!
+
+| **Author**: Tom Richter
+| **License**: MIT
+| **Project page**: https://github.com/trichter/toeplitz
+| **Pypi page**: https://pypi.python.org/pypi/toeplitz
+| **Test status**: |buildstatus|
 
 .. |buildstatus| image:: https://api.travis-ci.org/trichter/toeplitz.png?
     branch=master
