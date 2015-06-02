@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from numpy.distutils.core import Extension, setup
 
-VERSION='0.1.2'
+VERSION='0.1.3-dev'
 
 with open('README.rst') as f:
     README = f.read()
@@ -17,8 +17,8 @@ setup(name='toeplitz',
       version=VERSION,
       description=DESCRIPTION,
       long_description=LONG_DESCRIPTION,
-      author='Tom Richter',
-      author_email='richter@gfz-potsdam.de',
+      author='Tom Eulenfeld',
+      author_email='tom.eulenfeld@gmail.com',
       license='MIT',
       url='https://github.com/trichter/toeplitz',
       ext_modules=[ext],

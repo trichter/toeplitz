@@ -5,7 +5,7 @@ Python wrapper for Fortran90 toeplitz package to solve a variety of Toeplitz and
 
 Welcome!
 
-| **Author**: Tom Richter
+| **Author**: Tom Eulenfeld
 | **License**: MIT
 | **Project page**: https://github.com/trichter/toeplitz
 | **Pypi page**: https://pypi.python.org/pypi/toeplitz
