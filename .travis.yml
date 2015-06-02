@@ -2,7 +2,6 @@ language: python
 python:
   - "2.7"
   - "3.2"
-#  - "3.3"
 virtualenv:
   system_site_packages: true
 before_install:
@@ -11,9 +10,8 @@ before_install:
   - sudo apt-get install -qq libatlas-dev libatlas-base-dev liblapack-dev gfortran
   - if [[ $TRAVIS_PYTHON_VERSION == "2.7" ]]; then sudo apt-get install -qq python-numpy python-scipy; fi
   - if [[ $TRAVIS_PYTHON_VERSION == "3.2" ]]; then sudo apt-get install -qq python3-numpy python3-scipy; fi
-  - if [[ $TRAVIS_PYTHON_VERSION == "3.3" ]]; then pip install --use-mirrors numpy scipy; fi
 install:
-  - pip install . --use-mirrors
+  - pip install .
 script:
   - toeplitz-runtests
 after_success:
