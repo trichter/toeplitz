@@ -3,13 +3,7 @@ toeplitz
 Python wrapper for Fortran90 toeplitz package to solve a variety of Toeplitz and circulant linear systems
 ---------------------------------------------------------------------------------------------------------
 
-Welcome!
-
-| **Author**: Tom Eulenfeld
-| **License**: MIT
-| **Project page**: https://github.com/trichter/toeplitz
-| **Pypi page**: https://pypi.python.org/pypi/toeplitz
-| **Test status**: |buildstatus|
+|buildstatus|
 
 .. |buildstatus| image:: https://api.travis-ci.org/trichter/toeplitz.png?
     branch=master
@@ -38,11 +32,11 @@ After installing the required NumPy_ package you can install e.g. via pip_ by ru
     pip install toeplitz
 
 Alternatively download the source code and run::
-   
+
     python setup.py install
 
 The tests can be run with the script (SciPy installation necessary)::
-   
+
     toeplitz-runtests
 
 .. _John Burkhardt's website: http://people.sc.fsu.edu/~jburkardt/f_src/toeplitz/toeplitz.html
