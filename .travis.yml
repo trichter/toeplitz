@@ -1,18 +1,25 @@
 language: python
 python:
   - "2.7"
-  - "3.2"
-virtualenv:
-  system_site_packages: true
+  - "3.5"
+sudo: false
 before_install:
-  - lsb_release -a # get info on the operating system
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq libatlas-dev libatlas-base-dev liblapack-dev gfortran
-  - if [[ $TRAVIS_PYTHON_VERSION == "2.7" ]]; then sudo apt-get install -qq python-numpy python-scipy; fi
-  - if [[ $TRAVIS_PYTHON_VERSION == "3.2" ]]; then sudo apt-get install -qq python3-numpy python3-scipy; fi
+  - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
+      wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh;
+    else
+      wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+    fi
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes
+  - conda update -q conda
+  - conda info -a
+  - conda install python=$TRAVIS_PYTHON_VERSION gcc numpy scipy
 install:
-  - pip install .
+  - pip install --no-deps .
 script:
+  - mkdir empty; cd empty
   - toeplitz-runtests
 after_success:
 notifications:
