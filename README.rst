@@ -13,7 +13,7 @@ Python wrapper for Fortran90 toeplitz package to solve a variety of Toeplitz and
    :target: https://pypi.python.org/pypi/toeplitz
 
 .. |pyversions| image:: https://img.shields.io/pypi/pyversions/toeplitz.svg
-   :target: http://python.org
+   :target: https://python.org
 
 The wrapped Fortran90 toeplitz package was written by John Burkardt and is distributed under GNU LGPL license.
 It can be obtained from `John Burkhardt's website`_.
