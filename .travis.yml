@@ -1,7 +1,10 @@
 language: python
 python:
   - "2.7"
+  - "3.3"
+  - "3.4"
   - "3.5"
+  - "3.6"
 sudo: false
 before_install:
   - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
@@ -15,7 +18,9 @@ before_install:
   - conda config --set always_yes yes
   - conda update -q conda
   - conda info -a
-  - conda install python=$TRAVIS_PYTHON_VERSION gcc numpy scipy
+  - conda create -q -n testenv python=$TRAVIS_PYTHON_VERSION gcc numpy scipy
+  - source activate testenv
+  - conda list
 install:
   - pip install --no-deps .
 script:
