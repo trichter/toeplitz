@@ -17,14 +17,16 @@ matrix:
     - os: osx
       env: PYTHON_VERSION=2.7
     - os: osx
-      env: PYTHON_VERSION=3.6
+      env: PYTHON_VERSION=3.7
     - os: windows
       env: PYTHON_VERSION=2.7
     - os: windows
-      env: PYTHON_VERSION=3.6
+      env: PYTHON_VERSION=3.7
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       export OS="MacOSX";
+    elif [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
+      export OS="Windows";
     else
       export OS="Linux";
     fi
