@@ -12,10 +12,16 @@ matrix:
       env: PYTHON_VERSION=3.5
     - os: linux
       env: PYTHON_VERSION=3.6
+    - os: linux
+      env: PYTHON_VERSION=3.7
     - os: osx
       env: PYTHON_VERSION=2.7
     - os: osx
-      env: PYTHON_VERSION=3.5
+      env: PYTHON_VERSION=3.6
+    - os: windows
+      env: PYTHON_VERSION=2.7
+    - os: windows
+      env: PYTHON_VERSION=3.6
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       export OS="MacOSX";
@@ -32,6 +38,7 @@ before_install:
   - hash -r
   - conda config --set always_yes yes
   - conda update -q conda
+  - conda config --add channels conda-forge
   - conda info -a
   - conda create -q -n testenv python=$PYTHON_VERSION gcc numpy scipy
   - source activate testenv
