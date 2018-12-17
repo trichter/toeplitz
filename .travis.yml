@@ -36,6 +36,7 @@ before_install:
   - hash -r
   - conda config --set always_yes yes
   - conda update -q conda
+  - conda config --add channels conda-forge
   - conda info -a
   - conda create -q -n testenv python=$PYTHON_VERSION numpy scipy gcc
   - source activate testenv
