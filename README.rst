@@ -35,7 +35,7 @@ Installation
 
 Toeplitz can be installed with the command ``pip toeplitz``. To install toeplitz into a fresh conda environment run::
 
-    conda create -n toeplenv scipy
+    conda create -n toeplenv numpy scipy gcc
     conda activate toeplenv
     pip install toeplitz
     toeplitz-runtests
