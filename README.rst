@@ -33,16 +33,11 @@ For more documentation than on John Burkardt's website check the source file toe
 Installation
 ------------
 
-After installing the required NumPy_ package you can install e.g. via pip_ by running::
+Toeplitz can be installed with the command ``pip toeplitz``. To install toeplitz into a fresh conda environment run::
 
+    conda create -n toeplenv scipy
+    conda activate toeplenv
     pip install toeplitz
-
-Alternatively download the source code and run::
-
-    python setup.py install
-
-The tests can be run with the script (SciPy installation necessary)::
-
     toeplitz-runtests
 
 .. _John Burkhardt's website: http://people.sc.fsu.edu/~jburkardt/f_src/toeplitz/toeplitz.html
