@@ -1,15 +1,28 @@
 #!/usr/bin/env python
 from numpy.distutils.core import Extension, setup
+import os
+import shlex
 
-VERSION='0.1.5-dev'
+VERSION = '0.1.5-dev'
 
 with open('README.rst') as f:
     README = f.read()
 DESCRIPTION = README.split('\n')[2]
 LONG_DESCRIPTION = '\n'.join(README.split('\n')[17:])
 
+
+# https://groups.google.com/a/continuum.io/forum/#!topic/anaconda/Xw57CjIcBIU
+# https://github.com/numpy/numpy/issues/1171
+
+ldflags = os.environ.get('LDFLAGS', '')
+if ldflags == '':
+    extra_link_args = None
+else:
+    extra_link_args = ["-shared"] + shlex.split(ldflags)
+
 EXT = Extension(name='toeplitz',
-                sources=['src/toeplitz.pyf', 'src/toeplitz.f90'])
+                sources=['src/toeplitz.pyf', 'src/toeplitz.f90'],
+                extra_link_args=extra_link_args)
 
 CLASSIFIERS = [
     'Environment :: Console',
