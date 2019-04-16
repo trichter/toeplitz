@@ -35,10 +35,13 @@ Installation
 
 Toeplitz can be installed with the command ``pip toeplitz``. To install toeplitz into a fresh conda environment run::
 
-    conda create -n toeplenv numpy scipy gcc
+    conda create -n toeplenv numpy scipy gfortran_linux-64
     conda activate toeplenv
     pip install toeplitz
     toeplitz-runtests
+
+For OSX the package ``gfortran_osx-64`` must be used instead of ``gfortran_linux-64``.
+For Windows you need to install the FORTRAN compiler yourself (MinGW).
 
 .. _John Burkhardt's website: http://people.sc.fsu.edu/~jburkardt/f_src/toeplitz/toeplitz.html
 .. _NumPy: http://www.numpy.org/
