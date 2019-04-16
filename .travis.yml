@@ -3,46 +3,29 @@ sudo: false
 matrix:
   include:
     - os: linux
-      env: PYTHON_VERSION=2.7
-    - os: linux
-      env: PYTHON_VERSION=3.3
-    - os: linux
-      env: PYTHON_VERSION=3.4
-    - os: linux
       env: PYTHON_VERSION=3.5
     - os: linux
       env: PYTHON_VERSION=3.6
     - os: linux
       env: PYTHON_VERSION=3.7
     - os: osx
-      env: PYTHON_VERSION=2.7
-    - os: osx
       env: PYTHON_VERSION=3.7
 before_install:
+  - wget https://raw.githubusercontent.com/trichter/conda4travis/latest/conda4travis.sh -O conda4travis.sh
+  - source conda4travis.sh
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-      export OS="MacOSX";
-    elif [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
-      export OS="Windows";
+      GF="gfortran_osx-64";
+    elif [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      GF="gfortran_linux-64";
     else
-      export OS="Linux";
+      GF="";
     fi
-  - if [[ "$PYTHON_VERSION" == "2.7" ]]; then
-      wget https://repo.continuum.io/miniconda/Miniconda2-latest-${OS}-x86_64.sh -O miniconda.sh;
-    else
-      wget https://repo.continuum.io/miniconda/Miniconda3-latest-${OS}-x86_64.sh -O miniconda.sh;
-    fi
-  - bash miniconda.sh -b -p $HOME/miniconda
-  - export PATH="$HOME/miniconda/bin:$PATH"
-  - hash -r
-  - conda config --set always_yes yes
-  - conda update -q conda
   - conda config --add channels conda-forge
-  - conda info -a
-  - conda create -q -n testenv python=$PYTHON_VERSION numpy scipy gcc
-  - source activate testenv
+  - conda create -q -n testenv python=$PYTHON_VERSION numpy scipy $GF
+  - conda activate testenv
   - conda list
 install:
-  - pip install --no-deps .
+  - pip install -v --no-deps .
 script:
   - mkdir empty; cd empty
   - toeplitz-runtests
