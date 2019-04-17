@@ -3,7 +3,7 @@ from numpy.distutils.core import Extension, setup
 import os
 import shlex
 
-VERSION = '0.2.1-dev'
+VERSION = '0.3.0'
 
 with open('README.rst') as f:
     README = f.read()
@@ -33,6 +33,7 @@ CLASSIFIERS = [
     'Programming Language :: Python :: 3.5',
     'Programming Language :: Python :: 3.6',
     'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
     'Topic :: Scientific/Engineering :: Mathematics'
     ]
 
