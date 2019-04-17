@@ -3,7 +3,7 @@ from numpy.distutils.core import Extension, setup
 import os
 import shlex
 
-VERSION = '0.1.5-dev'
+VERSION = '0.2.0'
 
 with open('README.rst') as f:
     README = f.read()
