@@ -11,6 +11,8 @@ DESCRIPTION = README.split('\n')[2]
 LONG_DESCRIPTION = '\n'.join(README.split('\n')[17:])
 
 
+# the following fix is required to import scipy.linalg
+# see https://travis-ci.org/trichter/toeplitz/builds/520652660
 # https://groups.google.com/a/continuum.io/forum/#!topic/anaconda/Xw57CjIcBIU
 # https://github.com/numpy/numpy/issues/1171
 
