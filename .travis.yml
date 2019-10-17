@@ -3,13 +3,13 @@ sudo: false
 matrix:
   include:
     - os: linux
-      env: PYTHON_VERSION=3.5
+      env: PYTHON_VERSION=3.5 NPY_DISTUTILS_APPEND_FLAGS=1
     - os: linux
-      env: PYTHON_VERSION=3.6
+      env: PYTHON_VERSION=3.6 NPY_DISTUTILS_APPEND_FLAGS=1
     - os: linux
-      env: PYTHON_VERSION=3.7
+      env: PYTHON_VERSION=3.7 NPY_DISTUTILS_APPEND_FLAGS=1
     - os: osx
-      env: PYTHON_VERSION=3.7
+      env: PYTHON_VERSION=3.7 NPY_DISTUTILS_APPEND_FLAGS=1
 before_install:
   - wget https://raw.githubusercontent.com/trichter/conda4travis/latest/conda4travis.sh -O conda4travis.sh
   - source conda4travis.sh
