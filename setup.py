@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from numpy.distutils.core import Extension, setup
 
-VERSION = '0.3.1'
+VERSION = '0.3.2-dev'
 
 with open('README.rst') as f:
     README = f.read()
