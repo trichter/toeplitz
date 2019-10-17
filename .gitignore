@@ -2,6 +2,8 @@
 *~
 *.so
 build
+coverage
 dist
-rf.egg-info
+src/toeplitzmodule.c
+toeplitz.egg-info
 MANIFEST
