@@ -13,11 +13,14 @@ matrix:
     - os: windows
       env: PYTHON_VERSION=3.7 NPY_DISTUTILS_APPEND_FLAGS=1
 before_install:
+  - echo $PATH
   - wget https://raw.githubusercontent.com/trichter/conda4travis/latest/conda4travis.sh -O conda4travis.sh
   - source conda4travis.sh
+  - echo $PATH
   - conda config --add channels conda-forge
   - conda create -q -n testenv python=$PYTHON_VERSION numpy scipy fortran-compiler
   - conda activate testenv
+  - echo $PATH
   - conda list
 install:
   - pip install -v --no-deps .
