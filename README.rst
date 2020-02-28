@@ -46,3 +46,4 @@ and its dependencies for any OS.
 .. _John Burkhardt's website: http://people.sc.fsu.edu/~jburkardt/f_src/toeplitz/toeplitz.html
 .. _NumPy: http://www.numpy.org/
 .. _pip: http://www.pip-installer.org/
+
