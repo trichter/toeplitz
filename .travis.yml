@@ -19,6 +19,8 @@ before_install:
   - conda create -q -n testenv python=$PYTHON_VERSION numpy scipy fortran-compiler
   - conda activate testenv
   - conda list
+  - %CONDA_PREFIX%\\etc\\conda\\activate.d\\flang_activate.bat
+  - %CONDA_PREFIX%\\etc\\conda\\activate.d\\proj4-activate.bat
 install:
   - pip install -v --no-deps .
 script:
