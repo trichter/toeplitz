@@ -10,13 +10,19 @@ matrix:
       env: PYTHON_VERSION=3.7 NPY_DISTUTILS_APPEND_FLAGS=1
     - os: osx
       env: PYTHON_VERSION=3.7 NPY_DISTUTILS_APPEND_FLAGS=1
+    - os: windows
+      env: PYTHON_VERSION=3.7 NPY_DISTUTILS_APPEND_FLAGS=1   
 before_install:
   - wget https://raw.githubusercontent.com/trichter/conda4travis/latest/conda4travis.sh -O conda4travis.sh
   - source conda4travis.sh
   - conda config --add channels conda-forge
-  - conda create -q -n testenv python=$PYTHON_VERSION numpy scipy "gfortran_${TRAVIS_OS_NAME}-64"
+  - conda config --add channels conda-forge
+  - conda create -q -n testenv python=$PYTHON_VERSION numpy scipy fortran-compiler
   - conda activate testenv
   - conda list
+  - %CONDA_PREFIX%\\etc\\conda\\activate.d\\flang_activate.bat
+  - %CONDA_PREFIX%\\etc\\conda\\activate.d\\proj4-activate.bat
+
 install:
   - pip install -v --no-deps .
 script:
