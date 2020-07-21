@@ -3,7 +3,7 @@ toeplitz
 Python wrapper for Fortran90 toeplitz package to solve a variety of Toeplitz and circulant linear systems
 ---------------------------------------------------------------------------------------------------------
 
-|buildstatus| |version| |pyversions|
+|buildstatus| |version| |pyversions| |zenodo|
 
 .. |buildstatus| image:: https://api.travis-ci.org/trichter/toeplitz.svg?
     branch=master
@@ -14,6 +14,9 @@ Python wrapper for Fortran90 toeplitz package to solve a variety of Toeplitz and
 
 .. |pyversions| image:: https://img.shields.io/pypi/pyversions/toeplitz.svg
    :target: https://python.org
+
+.. |zenodo| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3953662.svg
+   :target: https://doi.org/10.5281/zenodo.3953662
 
 The wrapped Fortran90 toeplitz package was written by John Burkardt and is distributed under GNU LGPL license.
 It can be obtained from `John Burkhardt's website`_.
