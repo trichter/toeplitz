@@ -5,9 +5,8 @@ Python wrapper for Fortran90 toeplitz package to solve a variety of Toeplitz and
 
 |buildstatus| |version| |pyversions| |zenodo|
 
-.. |buildstatus| image:: https://api.travis-ci.org/trichter/toeplitz.svg?
-    branch=master
-   :target: https://travis-ci.org/trichter/toeplitz
+.. |buildstatus| image:: https://github.com/trichter/toeplitz/workflows/tests/badge.svg
+   :target: https://github.com/trichter/toeplitz/actions
 
 .. |version| image:: https://img.shields.io/pypi/v/toeplitz.svg
    :target: https://pypi.python.org/pypi/toeplitz
