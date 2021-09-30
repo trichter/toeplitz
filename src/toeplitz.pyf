@@ -87,7 +87,7 @@ python module toeplitz ! in
             integer(kind=4), intent(hide),depend(a) :: lda=shape(a,0)
         end subroutine cct_sl
         subroutine ctg_sl(a,x,r,m,l,lda) ! in :_toeplitz:toeplitz.f90
-            complex(kind=4) dimension(m*l,2 * l - 1),depend(m,l) :: a
+            complex(kind=4) dimension(m*m,2 * l - 1),depend(m,l) :: a
             complex(kind=4) dimension(m,l),intent(in,out) :: x
             complex(kind=4) intent(hide),dimension(m*m*(2*l+3)+m),depend(m,l) :: r
             integer(kind=4), intent(hide),depend(x) :: m=shape(x,0)
