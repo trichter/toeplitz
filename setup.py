@@ -9,7 +9,11 @@ DESCRIPTION = README.split('\n')[2]
 LONG_DESCRIPTION = '\n'.join(README.split('\n')[17:])
 
 EXT = Extension(name='toeplitz',
-                sources=['src/toeplitz.pyf', 'src/toeplitz.f90'])
+                sources=['src/toeplitz.pyf', 'src/toeplitz.f90'],
+                # Gfortran 10 added the default behavior to make type
+                # mismatches an error instead of a warning.
+                extra_f90_compile_args = ['-fallow-argument-mismatch']
+                )
 
 CLASSIFIERS = [
     'Environment :: Console',
