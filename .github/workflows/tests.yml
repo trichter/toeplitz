@@ -13,14 +13,14 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        python: [3.6, 3.7, 3.8]
+        python: ["3.10", "3.11", "3.12"]
         continue-on-error: [false]
         include:
           - os: macos-latest
-            python: 3.8
+            python: "3.12"
             continue-on-error: true
           - os: windows-latest
-            python: 3.8
+            python: "3.12"
             continue-on-error: true
     runs-on: ${{ matrix.os }}
     continue-on-error: ${{ matrix.continue-on-error }}
